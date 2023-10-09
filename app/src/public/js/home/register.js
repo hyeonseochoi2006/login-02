@@ -27,12 +27,12 @@ function register() {
     }).then((res) => res.json())
     .then((res) => {
         if (res.success) {
-            location.href = "https://studiumhome.com";
+            location.href = "/login";
         } else {
             alert(res.msg);
         }
     })
     .catch((err) => {
-        console.error(new Error("로그인 중 에러 발생"));
+        console.error(new Error("회원가입 중 에러 발생"));
     });
 }   
