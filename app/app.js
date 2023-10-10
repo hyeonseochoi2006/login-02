@@ -3,6 +3,9 @@
 // 모듈
 const express = require("express");
 const bodyPaser = require("body-parser");
+const dotenv = require("dotenv");
+dotenv.config();
+
 const app = express();
 
 //앱 세팅
