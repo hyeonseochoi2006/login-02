@@ -22,8 +22,9 @@ function login() {
     }).then((res) => res.json())
     .then((res) => {
         if (res.success) {
-            location.href = "https://studiumhome.com";
+            location.href = "https://vgmcyouth.com";
         } else {
+            if (res.err) return alert (res.err);
             alert(res.msg);
         }
     })

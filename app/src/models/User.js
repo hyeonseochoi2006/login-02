@@ -13,7 +13,7 @@ class User {
         // Check if client is defined and has necessary properties
         if (!client || !client.id || !client.psword) {
             console.error("Invalid client data. Login failed.");
-            return { success: false, msg: "로그인 창을 입력해주세요." };
+            return { success: false, msg: "아이디를 입력해 주세요" };
         }
 
         try {
@@ -28,7 +28,7 @@ class User {
             return { success: false, msg: "존재하지 않은 아이디입니다." };
         } catch (err) {
             console.error(err);
-            return { success: false, msg: "로그인 중 오류가 발생했습니다." };
+            return { success: false, err };
         }
     }
  
@@ -38,7 +38,7 @@ class User {
             const response = await UserStorage.save(client);
             return response;
         } catch (err) {
-            return { success: false, msg: err};
+            return { success: false, err};
         
         } 
     }
