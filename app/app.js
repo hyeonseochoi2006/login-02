@@ -4,9 +4,17 @@
 const express = require("express");
 const bodyPaser = require("body-parser");
 const dotenv = require("dotenv");
-dotenv.config();
+const morgan = require("morgan");
+
 
 const app = express();
+dotenv.config();
+
+
+
+//라우팅
+const home = require("./src/routes/home")
+
 
 //앱 세팅
 app.set("views", "./src/views");
@@ -16,8 +24,6 @@ app.use(bodyPaser.json());
 //인식 잘되는 시스템
 app.use(bodyPaser.urlencoded({extended: true}));
 
-//라우팅
-const home = require("./src/routes/home")
 app.use("/", home);
 
 module.exports = app;
