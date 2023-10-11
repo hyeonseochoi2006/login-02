@@ -42,7 +42,7 @@ const process = {
         const url = {   
             method:"POST",
             path: "/register",
-            status: response.err ? 400 : 200,
+            status: response.err ? 500 : 201,
         }
         log(response, url);
         return res.status(url.status).json(response);
